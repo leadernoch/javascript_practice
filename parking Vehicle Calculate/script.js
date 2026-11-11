@@ -7,7 +7,7 @@ function Calculate(){
         return;
     }
     let starttime = number(start.split(":")[0]) * 60 +
-     Number(start.split(":")[1];
+     Numberstart.split(":")[1];
     let endTime = Number(end.split(":")[0])* 60 +
     Number (end .split(":")[1]);
 
