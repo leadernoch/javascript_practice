@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Calculator</title>
+
+    <style>
+        body {
+            background-color: #415dc2;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #87081b;
+            margin-bottom: 50px;
+        }
+
+        input {
+            width: 90%;
+            height: 130px;
+            border: none;
+            border-radius: 25px;
+            background-color: white;
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 25px;
+        }
+
+        #total {
+            display: inline-block;
+            width: 30%;
+            height: 100px;
+            line-height: 100px;
+            background-color: white;
+            border-radius: 25px;
+            font-size: 35px;
+            margin: 10px;
+        }
+
+        button {
+            width: 120px;
+            height: 120px;
+            border: none;
+            border-radius: 25px;
+            background-color: #292929;
+            color: white;
+            font-size: 40px;
+            margin: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #087b99;
+        }
+
+        @media (max-width: 600px) {
+            input {
+                width: 95%;
+                height: 90px;
+            }
+
+            #total {
+                width: 95%;
+            }
+
+            button {
+                width: 75px;
+                height: 75px;
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Calculate Math</h1>
+
+    <input type="number" id="num1" value="10"
+        placeholder="Enter first number">
+
+    <input type="number" id="num2" value="30"
+        placeholder="Enter second number">
+
+    <br>
+
+    <p id="total">= 40</p>
+
+    <button onclick="Add()">+</button>
+    <button onclick="Subtract()">-</button>
+    <button onclick="Multiply()">*</button>
+    <button onclick="Divide()">/</button>
+    <button onclick="Percent()">%</button>
+
+    <script>
+
+        function Add() {
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+
+            let result = Number(num1) + Number(num2);
+
+            document.getElementById("total").innerHTML = "= " + result;
+        }
+
+        function Subtract() {
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+
+            let result = Number(num1) - Number(num2);
+
+            document.getElementById("total").innerHTML = "= " + result;
+        }
+
+        function Multiply() {
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+
+            let result = Number(num1) * Number(num2);
+
+            document.getElementById("total").innerHTML = "= " + result;
+        }
+
+        function Divide() {
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+
+            if (Number(num2) == 0) {
+                document.getElementById("total").innerHTML =
+                    "Cannot divide by 0";
+            } else {
+                let result = Number(num1) / Number(num2);
+
+                document.getElementById("total").innerHTML = "= " + result;
+            }
+        }
+
+        function Percent() {
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+
+            let result = (Number(num1) / 100) * Number(num2);
+
+            document.getElementById("total").innerHTML = "= " + result;
+        }
+
+    </script>
+
+</body>
+</html>

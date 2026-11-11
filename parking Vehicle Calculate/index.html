@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!--left-->
+        <div class="left">
+            <h2>Vehicle Parking Calculator</h2>
+            <div class="form-group">
+                <label>Type of vehicle:</label>
+                <select id ="vehicle">
+                    <option value="car">Car</option>
+                    <option value="motorcycle">Motobike</option>
+                </select>
+
+            </div>
+            <div class="form-group">
+                <label>Time in</label>
+                <input type="time" id="start">
+            </div>
+            <div class="form-group">
+                <label>Time out</label>
+                <input type="time" id="end">
+            </div>
+            <div class ="form-group">
+                <label>Shipping fee riel</label>
+                <input type="text"id="riel" placeholder="៛" readonly>
+            
+            </div>
+            <div class ="form-group">
+                <label>Shipping fee dollar</label>
+                <input type="text"id="dollar"placeholder="$" readonly>
+        
+            </div>
+            <button onclick="Calculate()">Calculate</button>
+            <div id="result"></div>
+        </div>
+        <div class="right">
+            <h3>Car</h3>
+            <p>
+                +if Shipping 8h => 1h 500 riel
+                <br>
+                +More than 8h => 1h = 1000 riel
+            </p>
+            <br>
+                <h3>Motobike</h3>
+                <p>
+                    +if Shipping 8h => 1h 200 riel
+                <br>
+                +More than 8h => 1h = 300 riel
+                </p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
